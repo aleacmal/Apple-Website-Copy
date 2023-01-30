@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple (Indonesia).copy</title>
+    <script src="https://kit.fontawesome.com/a54c84c11b.js" crossorigin="anonymous"></script>
+    <link rel = "icon" href="fileAppleProject/apple-logo - Copy.png" type = "image/x-icon">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #fff;
+            font-size: 62.5%;
+        }
+
+        /* bagian navigasi */
+        nav{
+            position: fixed;
+            height: 44px;
+            width: 100%;
+            display: grid;
+            align-content: center;  
+            background-color: rgba(0,0,0, 0.8);
+            z-index: 999;
+        }
+        nav > ul{
+            display: flex;
+            justify-content: space-between;
+            width: 72%;
+            margin: 0 auto;
+        }
+        nav ul li{
+            list-style: none;
+        }
+        nav ul li a{
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11.5px;
+            color: #bbb;
+            transition: .3s;
+        }
+        nav ul li a:hover{ color: #eee; }
+        .fa-apple, .fa-magnifying-glass{
+            margin-top: -10px;
+        }
+        .fa-apple{ font-size: 17px; }
+        .fa-magnifying-glass{ font-size: 14px; }
+
+        /* section-1 */
+        .bagian{ width: 100%; }
+        .bagian-1{
+            background-image: url(fileAppleProject/section-1.png);
+            position: relative;
+            height: 95vh;
+        }
+        .title{
+            text-align: center;
+            margin: 0 auto;
+            width: 500px;
+            height: 150px;
+            position: relative;
+            top: 80px;
+        }
+        .section-title{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .section-title a{ text-decoration: none; color: #fff; }
+        .big-title{ font-size: 56px; font-weight: 600; letter-spacing: -.005em; }
+        .sub-title{ font-size: 28px; font-weight: 400; letter-spacing: .004em; margin-bottom: 13px;}
+        .link-title a{ font-size: 21px; color: #2997ff; font-weight: 400;}
+        .link-title a:hover{ text-decoration: underline; }
+        .link-title.kanan{ margin-left: 30px; }
+        .link-title.kiri{ margin-right: 30px; }
+
+        /* section-2 */
+        .bagian-2{
+            background-image: url(fileAppleProject/section-2.png);
+            height: 90vh;
+        }
+        .title.dua{ top: 50px; }
+        .big-title.white a { color: #111; }
+        .sub-title.white a { color: #111; }
+
+        /* section-3 */
+        .bagian-3{
+            background-image: url(fileAppleProject/section-3.png);
+            height: 90vh;
+        }
+        .title.tiga{ top: 50px; }
+        .big-title.tiga .fa-apple{ font-size: 45px; margin-right: 8px; position: relative; top: -2px; }
+        .big-title.tiga{ font-size: 42px; }
+        .big-title.tiga span{ font-size: 19px; position: relative; top: -13px; font-weight: 100; letter-spacing: 1px;}
+
+        /* section-grid */
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 11px;
+            padding: 11px;
+        }
+        .part{
+            width: 100%;
+            height: 90vh;
+        }
+        .part.grid-1{ background-image: url(fileAppleProject/grid-1.png); }
+        .part.grid-2{ background-image: url(fileAppleProject/grid-2.png); }
+        .part.grid-3{ background-image: url(fileAppleProject/grid-3.png); }
+        .part.grid-4{ background-image: url(fileAppleProject/grid-4.png); }
+        .part.grid-5{ background-image: url(fileAppleProject/grid-5.png); }
+        .part.grid-6{ background-image: url(fileAppleProject/grid-6.png); }
+
+        .title-grid{ 
+            font-family: Arial, Helvetica, sans-serif; 
+            text-align: center;
+            margin: 0 auto;
+            width: 500px;
+            height: 150px;
+            position: relative;
+            top: 80px;
+        }
+        .grid-head-title a, .grid-sub-title a, .grid-link-title a { text-decoration: none; }
+        .grid-head-title a{ color: #fff; font-size: 40px; font-weight: 600;}
+        .grid-head-title span{ color: #fff; font-size: 21px; font-weight: 400; position: relative; top: -10px;}
+        .grid-head-title.white a,.grid-head-title.white a span{ color: #000; }
+        .grid-head-title.white { margin-top: -35px; }
+        .grid-sub-title a { color: #6e6e73; font-size: 17px; font-weight: 400;}
+        .grid-link-title a { color: #2997ff; font-size: 17px; font-weight: 400; margin-top: 10px;}
+        .grid-link-title a:hover { text-decoration: underline;}
+        .grid-link-title {margin-top: 10px;}
+        .grid-link-title.kiri {margin-right: 25px;}
+        .grid-link-title.kanan {margin-left: 25px;}
+        .grid-head-title.lima .fa-apple, .grid-head-title.enam .fa-apple{ 
+            font-size: 32px; 
+            position: relative; 
+            top: -2px; 
+            margin-right: 5px;
+        }
+        .grid-head-title.lima a{ font-size: 30px; }
+        .grid-head-title.enam a{ font-size: 38px; font-weight: 600;}
+        .grid-head-title.lima{ line-height: 1rem;}
+        .grid-head-title.enam{ line-height: 1rem;}
+        .sub-head-title{ font-size: 15px; letter-spacing: .8px; color: #FE6A14; margin-left: 10px;}
+        
+        /* slider */
+        .slider{
+            width: 100%;
+            display: grid;
+            height: 81vh;
+            border: 1px solid sandybrown;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+            position: relative;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .dot-slider{
+            position: absolute;
+            height: 35px;
+            width: 20%;
+            border: 1px solid lawngreen;
+            margin: 0 40%;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            place-items: center;
+        }
+        .dot{
+            height: 8px; width: 8px; border-radius: 50%; background-color: rgba(0,0,0, 0.2);
+            margin: 8px;
+        }
+
+        /* footer */
+        footer{ background-color: #f5f5f7; }
+        .footer{
+            font-size: 12.5px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #6e6e73;
+            width: 73%;
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+        .footer-nav ul li, .copyright ul li{
+            list-style: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .footer-nav ul li:hover, .copyright ul li:hover{
+            text-decoration: underline;
+            color: #1d1d1f;
+        }
+        .footer-nav .heading:hover{
+            text-decoration: none;
+            cursor: default;
+        }
+        .footer .first a{
+            text-decoration: none;
+            color: #6e6e73;
+        }
+        .footer > p{ padding-bottom: 7px; }
+        .footer-nav{ display: flex; }
+        .footer-nav ul{
+            width: 25%;
+            line-height: 1.5rem;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+        .footer-nav .heading{
+            color: #1d1d1f;
+            font-weight: 600;
+        }
+        .heading.bawah{ margin-top: 15px; }
+        .footer .second { line-height: 25px; }
+        .copyright{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0 10px;
+        }
+        .copyright ul{
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+        }
+        .copyright ul li a{
+            color: #6e6e73;
+            text-decoration: none;
+        }
+        .copyright ul li a:hover{ color: #1d1d1f; }
+        .copyright p a { text-decoration: none; color: #6e6e73; }
+        .copyright p a:hover{ text-decoration: underline; color: #1d1d1f; }
+        .blue-link{ color: #2997ff; text-decoration: none; }
+        .blue-link:hover { text-decoration: underline; }
+
+        /* discalimer */
+        .disclaimer{
+            position: fixed;
+            top: 50px;
+            left: 10px;
+            width: 36%;
+            z-index: 2;
+            background-color: #ddd;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 16px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="apple-logo"><a href=""><i class="fa-brands fa-apple"></i></a></li>
+            <li><a href="">Mac</a></li>
+            <li><a href="">iPad</a></li>
+            <li><a href="">iPhone</a></li>
+            <li><a href="">Watch</a></li>
+            <li><a href="">AirPods</a></li>
+            <li><a href="">TV & Rumah</a></li>
+            <li><a href="">Hanya di Apple</a></li>
+            <li><a href="">Dukungan</a></li>
+            <li><a href="">Tempat Membeli</a></li>
+            <li class="search-logo"><a href=""><i class="fa-sharp fa-solid fa-magnifying-glass"></i></a></li>
+        </ul>
+    </nav>
+    <section class="bagian bagian-1">
+        <div class="title">
+            <h1 class="section-title big-title"><a href="">iPhone 14 Pro</a></h1>
+            <p class="section-title sub-title"><a href="">Semakin Pro.</a></p>
+            <p class="section-title link-title kiri"><a href="">Selengkapnya ></a><span class="section-title link-title kanan"><a href="">Beli ></a></span></p> 
+        </div>
+    </section>
+    <section class="bagian bagian-2">
+        <div class="title dua">
+            <h1 class="section-title big-title white"><a href="">iPhone 14</a></h1>
+            <p class="section-title sub-title white"><a href="">Besar dan lebih besar.</a></p>
+            <p class="section-title link-title kiri"><a href="">Selengkapnya ></a><span class="section-title link-title kanan"><a href="">Beli ></a></span></p>
+        </div>
+    </section>
+    <section class="bagian bagian-3">
+        <div class="title tiga">
+            <h1 class="section-title big-title tiga"><a href=""><i class="fa-brands fa-apple"></i>WATCH <br> <span>SERIES 8</span></a></h1>
+            <p class="section-title sub-title"><a href="">Lompatan besar untuk kesehatan Anda.</a></p>
+            <p class="section-title link-title kiri"><a href="">Selengkapnya ></a><span class="section-title link-title kanan"><a href="">Beli ></a></span></p>
+        </div>
+    </section>
+    <section class="grid">
+        <div class="part grid-1">
+            <div class="title-grid">
+                <h2 class="grid-head-title satu"><a href="">MacBook Pro <br> <span>Bertenaga super berkat M2 Pro dan M2 Max.</span></a></h2>
+                <p class="grid-sub-title satu"><a href="">Cek kembali untuk informasi ketersediaan</a></p>
+                <p class="grid-link-title satu"><a href="">Selengkapnya ></a></p>
+            </div>
+        </div>
+        <div class="part grid-2">
+            <div class="title-grid">
+                <h2 class="grid-head-title dua"><a href="">MacBook Mini<br> <span>Bertenaga super berkat M2 dan M2 Pro.</span></a></h2>
+                <p class="grid-sub-title dua"><a href="">Cek kembali untuk informasi ketersediaan</a></p>
+                <p class="grid-link-title dua"><a href="">Selengkapnya ></a></p>
+            </div>
+        </div>
+        <div class="part grid-3">
+            <div class="title-grid">
+                <h2 class="grid-head-title tiga"><a href="">AirPods Pro<br> <span>Dibuat ulang dengan kemampuan baru.</span></a></h2>
+                <p class="grid-link-title kiri"><a href="">Selengkapnya ></a><span class="grid-link-title kanan"><a href="">Beli ></a></span></p>
+            </div>
+        </div>
+        <div class="part grid-4">
+            <div class="title-grid">
+                <h2 class="grid-head-title white empat"><a href="">iPad<br> <span>Disukai semua. Siap Berkarya. Luar biasa.</span></a></h2>
+                <p class="grid-link-title kiri"><a href="">Selengkapnya ></a><span class="grid-link-title kanan"><a href="">Beli ></a></span></p>
+            </div>
+        </div>
+        <div class="part grid-5"><div class="title-grid">
+            <h2 class="grid-head-title white lima"><a href=""><i class="fa-brands fa-apple"></i>WATCH<br><div class="sub-head-title white lima">ULTRA</div><br> <span>Petualangan menanti.</span></a></h2>
+            <p class="grid-link-title kiri"><a href="">Selengkapnya ></a><span class="grid-link-title kanan"><a href="">Beli ></a></span></p>
+        </div></div>
+        <div class="part grid-6">
+            <div class="title-grid">
+                <h2 class="grid-head-title white enam"><a href=""><i class="fa-brands fa-apple"></i>Fitness+<br><br> <span>Tahun ini milik Anda. <br> Kini Anda hanya butuh iPhone.</span></a></h2>
+                <p class="grid-link-title kiri"><a href="">Selengkapnya ></a><span class="grid-link-title kanan"><a href="">Coba gratis<sup>1</sup> ↗</a></span></p>
+            </div>
+        </div>
+    </section>
+    <section class="slider">
+        <div class="image-slider satu"><img src="fileAppleProject/slider-1.png" alt="image slider"></div>
+        <div class="image-slider dua"><img src="fileAppleProject/slider-2.png" alt="image slider"></div>
+        <div class="image-slider tiga"><img src="fileAppleProject/slider-3.png" alt="image slider"></div>
+        <div class="image-slider empat"><img src="fileAppleProject/slider-4.png" alt="image slider"></div>
+        <div class="image-slider lima"><img src="fileAppleProject/slider-5.png" alt="image slider"></div>
+        <div class="image-slider enam"><img src="fileAppleProject/slider-6.png" alt="image slider"></div>
+        <div class="image-slider tujuh"><img src="fileAppleProject/slider-7.png" alt="image slider"></div>
+        <div class="image-slider delapan"><img src="fileAppleProject/slider-8.png" alt="image slider"></div>
+        <div class="image-slider sembilan"><img src="fileAppleProject/slider-9.png" alt="image slider"></div>
+        <div class="image-slider sepuluh"><img src="fileAppleProject/slider-10.png" alt="image slider"></div>
+        <div class="dot-slider">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <p class="first">1. Apple Fitness+ memerlukan iPhone 8 atau lebih baru atau Apple Watch Series 3 atau lebih baru yang dipasangkan dengan iPhone 6s atau lebih baru. Hanya untuk pelanggan baru. Rp 69.000/bulan setelah masa percobaan. Paket diperbarui otomatis, kecuali dibatalkan. <a href="">Syarat-syarat</a> berlaku.</p>
+            <p class="second">Langganan diperlukan untuk Apple Fitness+. <br>
+            Apple Fitness+ memerlukan iPhone 8 atau lebih baru dengan iOS 16.1. <br>
+            Apple Fitness+ memerlukan Apple Watch Series 3 atau lebih baru. Tersedia ketika dipasangkan dengan iPhone 6s atau lebih baru dengan iOS 14.3 atau lebih baru. <br>
+            Aplikasi Kebugaran di Apple TV memerlukan tvOS 14.3 atau lebih baru. <br>
+            Aplikasi Kebugaran di iPad memerlukan iPadOS 14.3 atau lebih baru. <br>
+            Untuk mendapatkan fitur terbaru, pastikan perangkat Anda menjalankan versi perangkat lunak terbaru. <br>
+            Olahraga dan meditasi Apple Fitness+ diajarkan dalam bahasa Inggris dengan opsi untuk subtitle dalam bahasa Prancis, Spanyol, Jerman, Italia, Rusia, dan Portugis Brasil. <br>
+            Beberapa konten mungkin tidak tersedia di semua area.</p>
+            <hr>
+            
+            <div class="footer-nav">
+                <ul>
+                    <li class="heading">Belanja dan Belajar</li>
+                    <li>Mac</li>
+                    <li>iPad</li> 
+                    <li>iPhone</li> 
+                    <li>Watch</li> 
+                    <li>AirPods</li>
+                    <li>TV & Rumah</li>
+                    <li>AirTag</li>
+                </ul>
+                <ul>
+                    <li class="heading">Layanan</li>
+                    <li>Apple Music</li>
+                    <li>Apple TV+</li>
+                    <li>Apple Fitness+</li>
+                    <li>Apple Arcade</li>
+                    <li>iCloud</li>
+                    <li>Apple One</li>
+                    <li>Apple Books</li>
+                    <li>Apple Podcasts</li>
+                    <li>App Store</li>
+                    <li class="heading bawah">Akun</li>
+                    <li>Kelola ID Apple Anda</li>
+                    <li>iCloud.com</li>
+                </ul>
+                <ul>
+                    <li class="heading">Untuk Bisnis</li>
+                    <li>Apple dan Bisnis</li>
+                    <li class="heading bawah">Untuk Pendidikan</li>
+                    <li>Apple dan Pendidikan</li>
+                </ul>
+                <ul>
+                    <li class="heading">Nilai-nilai Apple</li>
+                    <li>Aksesibilitas</li>
+                    <li>Pendidikan</li>
+                    <li>Lingkungan</li>
+                    <li>Privasi</li>
+                    <li>Tanggung Jawab Pemasok</li>
+                    <li class="heading bawah">Tentang Apple</li>
+                    <li>Investor</li>
+                    <li>Etika & Kepatuhan</li>
+                    <li>Acara</li>
+                    <li>Hubungi Apple</li>
+                </ul>
+            </div>
+            <p><a href="" class="blue-link">Temukan retailer</a> di dekat Anda.</p>
+            <hr>
+            <div class="copyright">
+                <p>Hak cipta © 2023 Apple Inc. Seluruh hak cipta dilindungi undang-undang.</p>
+                <ul>
+                    <li><a href="">Kebijakan Privasi</a></li>
+                    <li><a href="">Ketentuan Penggunaan</a></li>
+                    <li><a href="">Legal</a></li>
+                    <li><a href="">Peta Situs</a></li>
+                </ul>
+                <p><a href="">Indonesia</a></p>
+            </div>
+        </div>
+    </footer>
+    <div class="disclaimer">
+        <p>Website ini di buat oleh aleacmal untuk tujuan belajar. <br> Kunjungi Website resmi <a href="https://www.apple.com/id/">Apple</a> | Dibuat pada 30 Januari 2023, <br> Beberapa  tampilan mungkin sudah berubah dari Website Aslinya</p>
+        <p>*Website ini tidak Responsive</p>
+    </div>
+</body>
+</html>
